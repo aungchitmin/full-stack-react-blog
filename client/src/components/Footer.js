@@ -1,12 +1,11 @@
 import React from 'react'
-import Logo from "../images/logo.png";
-
 
 const Footer = () => {
   return (
     <footer>
-      <img src={Logo} alt="" />
-      <span>Made with &hearts; and <b>React.js</b>.</span>
+      <span><b>SeaLion</b></span>
+      <span>&copy; 2022 </span>
+      <span>credit to <b>lamadev</b> &hearts;.</span>
     </footer>
   )
 }

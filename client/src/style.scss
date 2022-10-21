@@ -6,6 +6,8 @@ $lightGreen: #b9e7e7;
 
   .container {
     width: 1024px;
+    max-width: 1024px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);;
 
     //move out some class which will be common in many components
     .link {
@@ -65,6 +67,10 @@ $lightGreen: #b9e7e7;
 
     //Navbar
     .navbar {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      z-index: 999;
       .container {
         padding: 10px 0;
         display: flex;
@@ -72,8 +78,12 @@ $lightGreen: #b9e7e7;
         align-items: center;
 
         .logo {
-          img {
-            width: 120px;
+          h1 {
+            padding: 8px;
+            background-color: #b9e7e7;
+            text-decoration: none;
+            border-radius: 40% 30%;
+            color: #333;
           }
         }
 
@@ -119,11 +129,9 @@ $lightGreen: #b9e7e7;
       background-color: $lightGreen;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
-      img {
-        height: 50px;
-      }
+      justify-content: space-around;
+      font-size: 16px;
+      
     }
 
     //Home
@@ -137,6 +145,8 @@ $lightGreen: #b9e7e7;
         .post {
           display: flex;
           gap: 100px;
+          margin: 0 15px;
+          padding: 0 15px;
 
           &:nth-child(2n + 1) {
             flex-direction: row-reverse;

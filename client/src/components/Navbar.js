@@ -1,7 +1,6 @@
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../images/logo.png";
 import { AuthContext } from "../context/authContext";
 
 const Navbar = () => {
@@ -11,8 +10,8 @@ const Navbar = () => {
     <div className="navbar">
       <div className="container">
         <div className="logo">
-          <Link to="/">
-            <img src={Logo} alt="" />
+          <Link to="/" style={{'textDecoration': 'none'}}>
+            <h1>Memory</h1>
           </Link>
         </div>
         <div className="links">

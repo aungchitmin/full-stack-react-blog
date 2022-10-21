@@ -37,19 +37,24 @@ const Single = () => {
     }
   }
 
+  const getText = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent;
+  };
+
   return (
     <div className="single">
       <div className="content">
-        <img src={post?.img} alt="" />
+        <img src={`../upload/${post?.img}`} alt="" />
         <div className="user">
           {post.userImg && <img src={post.userImg} alt="" />}
           <div className="info">
-            <span>John</span>
+            <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
           {currentUser.username === post.username && (
             <div className="edit">
-              <Link to={"/write?edit=2"}>
+              <Link to={"/write?edit=2"} state={post}>
                 <img src={Edit} alt="" />
               </Link>
               <img onClick={handleClick} src={Delete} alt="" />
@@ -57,9 +62,9 @@ const Single = () => {
           )}
         </div>
         <h1>{post.title}</h1>
-        {post.desc}
+        {getText(post.desc)}
       </div>
-      <Menu />
+      <Menu cat={post.cat} />
     </div>
   );
 };
